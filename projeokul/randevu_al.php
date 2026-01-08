@@ -117,7 +117,6 @@ $hizmetler = $conn->query("SELECT * FROM hizmetler ORDER BY hizmet_adi ASC");
         }
     });
 
-    // Saat butonu seçimi
     function saatSec(saat, btn) {
         $('.saat-btn').removeClass('active');
         $(btn).addClass('active');
@@ -146,4 +145,5 @@ $hizmetler = $conn->query("SELECT * FROM hizmetler ORDER BY hizmet_adi ASC");
     </script>
 </body>
 </html>
+
 <a href="kullanici_panel.php" class="admin-kart" style="padding: 12px 25px; text-decoration: none; font-size: 0.9rem;">🏠 Panele Geri Dön</a>
