@@ -1,8 +1,4 @@
 <?php
-// cikis.php
-
-// 1. Oturumun başlamasını sağlar (Oturum değişkenlerine erişmek için zorunludur)
-// Güvenli kontrolü kullandığınızı varsayarak:
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -24,5 +20,6 @@ session_destroy();
 
 // 5. Giriş sayfasına yönlendir
 header("Location: giris.php");
-exit; // Yönlendirmeden sonra başka kod çalışmasın diye çıkış yapar
+exit; 
+
 ?>
