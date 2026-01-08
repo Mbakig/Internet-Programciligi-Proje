@@ -1,5 +1,4 @@
 <?php
-// randevularim.php
 include 'db_baglanti.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -10,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 $kullanici_id = $_SESSION['user_id'];
 $mesaj = "";
 
-// --- PUAN VE YORUM KAYDETME İŞLEMİ ---
+
 if (isset($_POST['puan_kaydet'])) {
     $randevu_id = (int)$_POST['randevu_id'];
     $puan = (int)$_POST['puan'];
@@ -23,7 +22,7 @@ if (isset($_POST['puan_kaydet'])) {
     }
 }
 
-// --- RANDEVU İPTAL ETME İŞLEMİ ---
+
 if (isset($_GET['action']) && $_GET['action'] == 'iptal' && isset($_GET['id'])) {
     $randevu_id = (int)$_GET['id'];
     $sql_check = "SELECT CONCAT(randevu_tarihi, ' ', randevu_saati) as dt, durum FROM randevular WHERE id = ? AND kullanici_id = ?";
@@ -188,4 +187,5 @@ $randevular = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 </div>
 
 </body>
+
 </html>
