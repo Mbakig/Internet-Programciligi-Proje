@@ -20,7 +20,7 @@ if (isset($_POST['getir_saatler'])) {
         exit;
     }
 
-    // DOLU RANDEVULARI ÇEK (Çakışmaları önlemek için)
+    // DOLU RANDEVULARI ÇEK 
     $dolu_s = $conn->prepare("SELECT DATE_FORMAT(randevu_saati, '%H:%i') as saat FROM randevular WHERE personel_id = ? AND randevu_tarihi = ? AND durum != 'reddedildi'");
     $dolu_s->bind_param("is", $p_id, $tarih);
     $dolu_s->execute();
@@ -65,9 +65,10 @@ if (isset($_POST['kaydet'])) {
     $stmt->bind_param("iiisss", $u_id, $p_id, $h_id, $tarih, $saat, $not);
     
     if($stmt->execute()) {
-        echo "başarılı"; // Randevu_al.php'deki JS bu kelimeyi bekliyor
+        echo "başarılı"; 
     } else {
         echo "Hata: " . $conn->error;
     }
     exit;
+
 }
