@@ -1,4 +1,4 @@
--- 1. Veritabanı oluşturma (Eğer yoksa)
+-- 1. Veritabanı oluşturma 
 CREATE DATABASE IF NOT EXISTS kuafor_randevu CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE kuafor_randevu;
 
@@ -54,7 +54,7 @@ CREATE TABLE randevular (
     UNIQUE KEY unique_randevu (personel_id, randevu_tarihi, randevu_saati) -- Çakışmayı engeller
 );
 
--- Örnek Admin Ekleme (Şifreyi 'admin123' olarak hash'ledik)
+
 INSERT INTO kullanicilar (ad, soyad, email, sifre, rol) VALUES 
 ('Yönetici', 'Sistem', 'admin@kuafor.com', '$2y$10$wTf7qPZ5XbQ8nFqE5oN/4O/iLzY.L2vJt0K8.0eA1a.l4fT2H.o5K', 'admin');
--- Şifrenizi oluştururken PHP'de password_hash() kullanmayı unutmayın!
+
