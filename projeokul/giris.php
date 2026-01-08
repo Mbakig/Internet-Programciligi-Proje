@@ -17,13 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($sonuc->num_rows > 0) {
             $kullanici = $sonuc->fetch_assoc();
             
-            // Şifre kontrolü (Eğer kayıt sırasında password_hash kullandıysanız password_verify kullanın)
             if ($sifre === $kullanici['sifre']) {
                 $_SESSION['user_id'] = $kullanici['id'];
                 $_SESSION['user_name'] = $kullanici['ad'];
                 $_SESSION['user_role'] = $kullanici['rol'];
 
-                // Role göre yönlendirme
+               
                 if ($kullanici['rol'] == 'admin') {
                     header("Location: admin_panel.php");
                 } else {
@@ -91,4 +90,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </body>
+
 </html>
