@@ -1,0 +1,285 @@
+/* Genel Ayarlar ve Sayfa Hizalama */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    /* Koyu Lacivert'ten Siyah'a yumuşak bir geçiş */
+    background: radial-gradient(circle at top, #1a2a3a 0%, #0b0e11 100%) !important;
+    background-attachment: fixed !important;
+    margin: 0;
+    padding: 40px 20px;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+
+/* Kartlara hafif bir cam efekti (Glassmorphism) */
+.admin-kart {
+    background: rgba(22, 27, 34, 0.8) !important; /* Yarı saydam siyah */
+    backdrop-filter: blur(10px); /* Arka planı hafif bulanıklaştırır */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Kartlara hafif bir cam efekti (Glassmorphism) ekleyelim ki arka planla bütünleşsin */
+.admin-kart {
+    background: rgba(22, 27, 34, 0.8); /* Yarı saydam siyah */
+    backdrop-filter: blur(10px); /* Arka planı hafif bulanıklaştırır */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.admin-kart:hover {
+    border-color: #8b0000; /* Bordo parlama */
+    transform: translateY(-8px);
+    background: rgba(139, 0, 0, 0.1); /* Çok hafif bordo bir parıltı */
+}
+}
+
+/* Konteyner Yapısı (Sayfadaki her şeyin genişliğini sınırlar) */
+h2, h3, form, table, .mesaj-kutusu {
+    width: 100%;
+    max-width: 800px; /* Sayfa çok yayılmasın diye limit */
+}
+
+/* Başlıklar - Bordo Detaylı */
+h2, h3 {
+    color: #8b0000; /* Bordo */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #1a2a3a;
+    padding-bottom: 15px;
+}
+
+/* Tablo Tasarımı - Lacivert ve Siyah */
+table {
+    border-collapse: collapse;
+    background: #161b22;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #0d1b2a; /* Lacivert */
+    color: #ffffff;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #30363d;
+    color: #c9d1d9;
+}
+
+tr:hover {
+    background-color: #1f242c;
+}
+
+/* Form Tasarımı - Siyah ve Gri */
+form {
+    background: #0d1117;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8b0000; /* Bordo etiketler */
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"],
+input[type="date"], 
+input[type="time"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #0b0e11;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #8b0000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+}
+
+/* Butonlar - Bordo ve Lacivert Geçişi */
+button, input[type="submit"] {
+    background-color: #8b0000; /* Bordo */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0d1b2a; /* Lacivert */
+    box-shadow: 0 0 10px rgba(13, 27, 42, 0.8);
+}
+
+/* Linkler */
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #8b0000;
+    text-decoration: underline;
+}
+
+/* Checkbox Alanı Düzenleme */
+div[style*="overflow-y: scroll"] {
+    background: #0b0e11 !important;
+    border-color: #30363d !important;
+    border-radius: 6px;
+    padding: 15px !important;
+}
+/* Admin Panel Kart Düzeni */
+.admin-konteyner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+}
+
+.admin-kart {
+    background: #161b22;
+    border: 2px solid #30363d;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-kart:hover {
+    border-color: #8b0000; /* Bordo */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+    background: #1c2128;
+}
+
+.admin-kart i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #8b0000;
+}
+
+.admin-kart span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Çıkış Butonu Özel Ayar */
+.cikis-kart {
+    border-color: #34495e;
+}
+.cikis-kart:hover {
+    border-color: #d32f2f;
+}
+/* Tablo içi işlem butonları */
+.islem-linki {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.duzenle-btn {
+    background-color: #0d1b2a; /* Lacivert */
+    color: white !important;
+}
+
+.sil-btn {
+    background-color: #8b0000; /* Bordo */
+    color: white !important;
+}
+
+.islem-linki:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+.saat-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.saat-btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.musait {
+    background-color: #1a2a3a; /* Lacivert */
+    color: white;
+}
+
+.musait:hover {
+    background-color: #8b0000; /* Bordo */
+}
+
+.dolu {
+    background-color: #0b0e11; /* Siyah */
+    color: #444; /* Silik renk */
+    cursor: not-allowed;
+    border-style: dashed;
+}
